@@ -17,6 +17,7 @@ import {
 import NavBar from "../src/ui/navigation/NavBar";
 import DetailsCard from "./ui/navigation/DetailsCard";
 import theme from "./ui/theme";
+import Banner from "./ui/Banner";
 
 const data = [
   // Vegetables
@@ -1293,12 +1294,14 @@ const App = () => {
     );
   });
 
-
   return (
     <ThemeProvider theme={theme}>
-      <NavBar />
-      <Container>
-        <Typography
+      <div>
+        <NavBar />
+      </div>
+
+      <Container style={{ backgroundColor: "#F5F5F5" }}>
+        {/* <Typography
           variant="h4"
           align="center"
           style={{
@@ -1309,7 +1312,9 @@ const App = () => {
           gutterBottom
         >
           Organic Pantry
-        </Typography>
+        </Typography> */}
+
+        <Banner />
 
         <Grid container spacing={2} style={{ marginBottom: "20px" }}>
           <Grid item xs={12} sm={6}>
@@ -1365,7 +1370,11 @@ const App = () => {
                     variant="outlined"
                     color="primary"
                     onClick={() => handleViewDetails(item)}
-                    style={{ marginTop: "10px" }}
+                    style={{
+                      marginTop: "10px",
+                      backgroundColor: "#4CAF50",
+                      color: "white",
+                    }}
                   >
                     View Details
                   </Button>
